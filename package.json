@@ -1,0 +1,81 @@
+{
+  "name": "auto-code-updates-example",
+  "version": "0.0.1",
+  "description": "The demo project for automatic code updates presented as a part of DevOps.js conference and similar ones",
+  "author": "Ante Tomic",
+  "bin": {
+    "auto-code-updates-example": "./bin/run"
+  },
+  "homepage": "https://github.com/antetmc2/auto-code-updates-example",
+  "license": "MIT",
+  "main": "lib/index.js",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:antetmc2/auto-code-updates-example.git"
+  },
+  "files": [
+    "/bin",
+    "/dist",
+    "/npm-shrinkwrap.json",
+    "/oclif.manifest.json"
+  ],
+  "dependencies": {
+    "@oclif/command": "^1.8.16",
+    "@oclif/config": "^1.18.3",
+    "@oclif/core": "^1",
+    "@oclif/plugin-help": "^5.1.12",
+    "@oclif/plugin-plugins": "^2.0.1",
+    "edit-json-file": "^1.7.0",
+    "replace-in-file": "^6.3.2",
+    "semver": "^7.3.5",
+    "shelljs": "^0.8.5"
+  },
+  "devDependencies": {
+    "@oclif/test": "^2",
+    "@types/chai": "^4",
+    "@types/edit-json-file": "^1.7.0",
+    "@types/mocha": "^9.0.0",
+    "@types/node": "^16.9.4",
+    "@types/semver": "^7.3.9",
+    "chai": "^4",
+    "eslint": "^7.32.0",
+    "eslint-config-oclif": "^4",
+    "eslint-config-oclif-typescript": "^1.0.2",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-filename-rules": "^1.2.0",
+    "eslint-plugin-prettier": "^4.0.0",
+    "globby": "^11",
+    "mocha": "^9",
+    "oclif": "^2",
+    "prettier": "^2.5.1",
+    "shx": "^0.3.3",
+    "ts-node": "^10.2.1",
+    "tslib": "^2.3.1",
+    "typescript": "^4.4.3"
+  },
+  "oclif": {
+    "commands": "./dist/commands",
+    "bin": "auto-code-updates-example",
+    "plugins": [
+      "@oclif/plugin-help"
+    ]
+  },
+  "scripts": {
+    "build": "shx rm -rf dist && tsc -b",
+    "lint": "eslint \"./src/**/*.+(ts|js|tsx|jsx)\" -f codeframe",
+    "lint:fix": "npm run lint -- --fix",
+    "postpack": "shx rm -f oclif.manifest.json",
+    "posttest": "npm run lint",
+    "prepack": "npm run build && oclif manifest && oclif readme",
+    "test": "mocha --forbid-only \"test/**/*.test.ts\"",
+    "version": "oclif readme && git add README.md"
+  },
+  "engines": {
+    "node": ">=12.0.0"
+  },
+  "bugs": "https://github.com/antetmc2/auto-code-updates-example/issues",
+  "keywords": [
+    "oclif"
+  ],
+  "types": "dist/index.d.ts"
+}
