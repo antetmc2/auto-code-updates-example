@@ -1,0 +1,35 @@
+{
+    "name": "02-project-update-dependencies",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "lint": "eslint \"./src/**/*.+(ts|js|tsx|jsx)\" -f codeframe"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git@github.com:antetmc2/auto-code-updates-example.git"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "dependencies": {
+        "react": "^16.14.0",
+        "react-dom": "^16.14.0"
+    },
+    "devDependencies": {
+        "@types/react": "^16.14.24",
+        "@types/react-dom": "^16.9.14",
+        "@typescript-eslint/eslint-plugin": "^5.9.1",
+        "@typescript-eslint/parser": "^5.9.1",
+        "eslint": "^7.32.0",
+        "eslint-config-prettier": "^8.5.0",
+        "eslint-plugin-prettier": "^4.0.0",
+        "eslint-plugin-react": "^7.28.0",
+        "typescript": "^4.5.4"
+    },
+    "engines": {
+        "node": ">=16.0.0"
+    }
+}

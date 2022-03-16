@@ -16,8 +16,23 @@ oclif example Hello World CLI
 * [Usage](#usage)
 * [Commands](#commands)
 <!-- tocstop -->
+* [Usage](#usage)
+* [Commands](#commands)
+<!-- tocstop -->
 # Usage
 <!-- usage -->
+```sh-session
+$ npm install -g auto-code-updates-example
+$ auto-code-updates-example COMMAND
+running command...
+$ auto-code-updates-example (--version)
+auto-code-updates-example/0.0.1 win32-x64 node-v16.13.0
+$ auto-code-updates-example --help [COMMAND]
+USAGE
+  $ auto-code-updates-example COMMAND
+...
+```
+<!-- usagestop -->
 ```sh-session
 $ npm install -g auto-code-updates-example
 $ auto-code-updates-example COMMAND
@@ -44,15 +59,101 @@ USAGE
 <!-- usagestop -->
 # Commands
 <!-- commands -->
+* [`auto-code-updates-example eslint-upgrade-commands [PATH]`](#auto-code-updates-example-eslint-upgrade-commands-path)
+* [`auto-code-updates-example eslint-upgrade-commands:filter PACKAGEJSONPATH`](#auto-code-updates-example-eslint-upgrade-commandsfilter-packagejsonpath)
+* [`auto-code-updates-example eslint-upgrade-commands:get-migration-options MIGRATIONTASK PACKAGEJSONPATH`](#auto-code-updates-example-eslint-upgrade-commandsget-migration-options-migrationtask-packagejsonpath)
+* [`auto-code-updates-example eslint-upgrade-commands:needs-migration [PATH]`](#auto-code-updates-example-eslint-upgrade-commandsneeds-migration-path)
 * [`auto-code-updates-example hello PERSON`](#auto-code-updates-example-hello-person)
-* [`auto-code-updates-example hello world`](#auto-code-updates-example-hello-world)
+* [`auto-code-updates-example hello:world`](#auto-code-updates-example-helloworld)
 * [`auto-code-updates-example help [COMMAND]`](#auto-code-updates-example-help-command)
-* [`auto-code-updates-example plugins`](#auto-code-updates-example-plugins)
-* [`auto-code-updates-example plugins:inspect PLUGIN...`](#auto-code-updates-example-pluginsinspect-plugin)
-* [`auto-code-updates-example plugins:install PLUGIN...`](#auto-code-updates-example-pluginsinstall-plugin)
-* [`auto-code-updates-example plugins:link PLUGIN`](#auto-code-updates-example-pluginslink-plugin)
-* [`auto-code-updates-example plugins:uninstall PLUGIN...`](#auto-code-updates-example-pluginsuninstall-plugin)
-* [`auto-code-updates-example plugins update`](#auto-code-updates-example-plugins-update)
+
+## `auto-code-updates-example eslint-upgrade-commands [PATH]`
+
+Adds the "lint:fix" command if missing in the projects
+
+```
+USAGE
+  $ auto-code-updates-example eslint-upgrade-commands [PATH] [-h]
+
+ARGUMENTS
+  PATH  [default: ./] Path to project
+
+FLAGS
+  -h, --help  show CLI help
+
+DESCRIPTION
+  Adds the "lint:fix" command if missing in the projects
+
+EXAMPLES
+  $ auto-code-updates-example eslint-upgrade-commands ~/test_projects/01-project-package-json-with-eslint
+```
+
+_See code: [dist/commands/eslint-upgrade-commands/index.ts](https://github.com/antetmc2/auto-code-updates-example/blob/v0.0.1/dist/commands/eslint-upgrade-commands/index.ts)_
+
+## `auto-code-updates-example eslint-upgrade-commands:filter PACKAGEJSONPATH`
+
+Check files in project
+
+```
+USAGE
+  $ auto-code-updates-example eslint-upgrade-commands:filter [PACKAGEJSONPATH] [-h]
+
+ARGUMENTS
+  PACKAGEJSONPATH  [default: ./package.json] Path package.json
+
+FLAGS
+  -h, --help  show CLI help
+
+DESCRIPTION
+  Check files in project
+
+EXAMPLES
+  $ auto-code-updates-example eslint-upgrade-commands:filter ~/test_projects/01-project-package-json-with-eslint/package.json
+```
+
+_See code: [dist/commands/eslint-upgrade-commands/filter.ts](https://github.com/antetmc2/auto-code-updates-example/blob/v0.0.1/dist/commands/eslint-upgrade-commands/filter.ts)_
+
+## `auto-code-updates-example eslint-upgrade-commands:get-migration-options MIGRATIONTASK PACKAGEJSONPATH`
+
+```
+USAGE
+  $ auto-code-updates-example eslint-upgrade-commands:get-migration-options [MIGRATIONTASK] [PACKAGEJSONPATH] [-h]
+
+ARGUMENTS
+  MIGRATIONTASK    TaskId for PR and branch name
+  PACKAGEJSONPATH  [default: ./package.json] Path package.json
+
+FLAGS
+  -h, --help  show CLI help
+
+EXAMPLES
+  $ auto-code-updates-example eslint-upgrade-commands:get-migration-options DEVOPSJS-01 ~/test_projects/01-project-package-json-with-eslint/package.json
+```
+
+_See code: [dist/commands/eslint-upgrade-commands/get-migration-options.ts](https://github.com/antetmc2/auto-code-updates-example/blob/v0.0.1/dist/commands/eslint-upgrade-commands/get-migration-options.ts)_
+
+## `auto-code-updates-example eslint-upgrade-commands:needs-migration [PATH]`
+
+Checks if project was migrated
+
+```
+USAGE
+  $ auto-code-updates-example eslint-upgrade-commands:needs-migration [PATH] [-h]
+
+ARGUMENTS
+  PATH  [default: ./] Path to project
+
+FLAGS
+  -h, --help  show CLI help
+
+DESCRIPTION
+  Checks if project was migrated
+
+EXAMPLES
+  $ auto-code-updates-example eslint-upgrade-commands:needs-migrate ~/test_projects/01-project-package-json-with-eslint
+```
+
+_See code: [dist/commands/eslint-upgrade-commands/needs-migration.ts](https://github.com/antetmc2/auto-code-updates-example/blob/v0.0.1/dist/commands/eslint-upgrade-commands/needs-migration.ts)_
 
 ## `auto-code-updates-example hello PERSON`
 
@@ -76,15 +177,15 @@ EXAMPLES
   hello friend from oclif! (./src/commands/hello/index.ts)
 ```
 
-_See code: [dist/commands/hello/index.ts](https://github.com/antetmc2/auto-code-updates-example/blob/v0.0.0/dist/commands/hello/index.ts)_
+_See code: [dist/commands/hello/index.ts](https://github.com/antetmc2/auto-code-updates-example/blob/v0.0.1/dist/commands/hello/index.ts)_
 
-## `auto-code-updates-example hello world`
+## `auto-code-updates-example hello:world`
 
 Say hello world
 
 ```
 USAGE
-  $ auto-code-updates-example hello world
+  $ auto-code-updates-example hello:world
 
 DESCRIPTION
   Say hello world
@@ -93,6 +194,8 @@ EXAMPLES
   $ oex hello world
   hello world! (./src/commands/hello/world.ts)
 ```
+
+_See code: [dist/commands/hello/world.ts](https://github.com/antetmc2/auto-code-updates-example/blob/v0.0.1/dist/commands/hello/world.ts)_
 
 ## `auto-code-updates-example help [COMMAND]`
 
@@ -113,366 +216,4 @@ DESCRIPTION
 ```
 
 _See code: [@oclif/plugin-help](https://github.com/oclif/plugin-help/blob/v5.1.12/src/commands/help.ts)_
-
-## `auto-code-updates-example plugins`
-
-List installed plugins.
-
-```
-USAGE
-  $ auto-code-updates-example plugins [--core]
-
-FLAGS
-  --core  Show core plugins.
-
-DESCRIPTION
-  List installed plugins.
-
-EXAMPLES
-  $ auto-code-updates-example plugins
-```
-
-_See code: [@oclif/plugin-plugins](https://github.com/oclif/plugin-plugins/blob/v2.0.11/src/commands/plugins/index.ts)_
-
-## `auto-code-updates-example plugins:inspect PLUGIN...`
-
-Displays installation properties of a plugin.
-
-```
-USAGE
-  $ auto-code-updates-example plugins:inspect PLUGIN...
-
-ARGUMENTS
-  PLUGIN  [default: .] Plugin to inspect.
-
-FLAGS
-  -h, --help     Show CLI help.
-  -v, --verbose
-
-DESCRIPTION
-  Displays installation properties of a plugin.
-
-EXAMPLES
-  $ auto-code-updates-example plugins:inspect myplugin
-```
-
-## `auto-code-updates-example plugins:install PLUGIN...`
-
-Installs a plugin into the CLI.
-
-```
-USAGE
-  $ auto-code-updates-example plugins:install PLUGIN...
-
-ARGUMENTS
-  PLUGIN  Plugin to install.
-
-FLAGS
-  -f, --force    Run yarn install with force flag.
-  -h, --help     Show CLI help.
-  -v, --verbose
-
-DESCRIPTION
-  Installs a plugin into the CLI.
-
-  Can be installed from npm or a git url.
-
-  Installation of a user-installed plugin will override a core plugin.
-
-  e.g. If you have a core plugin that has a 'hello' command, installing a user-installed plugin with a 'hello' command
-  will override the core plugin implementation. This is useful if a user needs to update core plugin functionality in
-  the CLI without the need to patch and update the whole CLI.
-
-ALIASES
-  $ auto-code-updates-example plugins add
-
-EXAMPLES
-  $ auto-code-updates-example plugins:install myplugin 
-
-  $ auto-code-updates-example plugins:install https://github.com/someuser/someplugin
-
-  $ auto-code-updates-example plugins:install someuser/someplugin
-```
-
-## `auto-code-updates-example plugins:link PLUGIN`
-
-Links a plugin into the CLI for development.
-
-```
-USAGE
-  $ auto-code-updates-example plugins:link PLUGIN
-
-ARGUMENTS
-  PATH  [default: .] path to plugin
-
-FLAGS
-  -h, --help     Show CLI help.
-  -v, --verbose
-
-DESCRIPTION
-  Links a plugin into the CLI for development.
-
-  Installation of a linked plugin will override a user-installed or core plugin.
-
-  e.g. If you have a user-installed or core plugin that has a 'hello' command, installing a linked plugin with a 'hello'
-  command will override the user-installed or core plugin implementation. This is useful for development work.
-
-EXAMPLES
-  $ auto-code-updates-example plugins:link myplugin
-```
-
-## `auto-code-updates-example plugins:uninstall PLUGIN...`
-
-Removes a plugin from the CLI.
-
-```
-USAGE
-  $ auto-code-updates-example plugins:uninstall PLUGIN...
-
-ARGUMENTS
-  PLUGIN  plugin to uninstall
-
-FLAGS
-  -h, --help     Show CLI help.
-  -v, --verbose
-
-DESCRIPTION
-  Removes a plugin from the CLI.
-
-ALIASES
-  $ auto-code-updates-example plugins unlink
-  $ auto-code-updates-example plugins remove
-```
-
-## `auto-code-updates-example plugins update`
-
-Update installed plugins.
-
-```
-USAGE
-  $ auto-code-updates-example plugins update [-h] [-v]
-
-FLAGS
-  -h, --help     Show CLI help.
-  -v, --verbose
-
-DESCRIPTION
-  Update installed plugins.
-```
-<!-- commandsstop -->
-* [`oex hello PERSON`](#oex-hello-person)
-* [`oex hello world`](#oex-hello-world)
-* [`oex help [COMMAND]`](#oex-help-command)
-* [`oex plugins`](#oex-plugins)
-* [`oex plugins:inspect PLUGIN...`](#oex-pluginsinspect-plugin)
-* [`oex plugins:install PLUGIN...`](#oex-pluginsinstall-plugin)
-* [`oex plugins:link PLUGIN`](#oex-pluginslink-plugin)
-* [`oex plugins:uninstall PLUGIN...`](#oex-pluginsuninstall-plugin)
-* [`oex plugins update`](#oex-plugins-update)
-
-## `oex hello PERSON`
-
-Say hello
-
-```
-USAGE
-  $ oex hello [PERSON] -f <value>
-
-ARGUMENTS
-  PERSON  Person to say hello to
-
-FLAGS
-  -f, --from=<value>  (required) Whom is saying hello
-
-DESCRIPTION
-  Say hello
-
-EXAMPLES
-  $ oex hello friend --from oclif
-  hello friend from oclif! (./src/commands/hello/index.ts)
-```
-
-_See code: [dist/commands/hello/index.ts](https://github.com/oclif/hello-world/blob/v0.0.0/dist/commands/hello/index.ts)_
-
-## `oex hello world`
-
-Say hello world
-
-```
-USAGE
-  $ oex hello world
-
-DESCRIPTION
-  Say hello world
-
-EXAMPLES
-  $ oex hello world
-  hello world! (./src/commands/hello/world.ts)
-```
-
-## `oex help [COMMAND]`
-
-Display help for oex.
-
-```
-USAGE
-  $ oex help [COMMAND] [-n]
-
-ARGUMENTS
-  COMMAND  Command to show help for.
-
-FLAGS
-  -n, --nested-commands  Include all nested commands in the output.
-
-DESCRIPTION
-  Display help for oex.
-```
-
-_See code: [@oclif/plugin-help](https://github.com/oclif/plugin-help/blob/v5.1.10/src/commands/help.ts)_
-
-## `oex plugins`
-
-List installed plugins.
-
-```
-USAGE
-  $ oex plugins [--core]
-
-FLAGS
-  --core  Show core plugins.
-
-DESCRIPTION
-  List installed plugins.
-
-EXAMPLES
-  $ oex plugins
-```
-
-_See code: [@oclif/plugin-plugins](https://github.com/oclif/plugin-plugins/blob/v2.0.11/src/commands/plugins/index.ts)_
-
-## `oex plugins:inspect PLUGIN...`
-
-Displays installation properties of a plugin.
-
-```
-USAGE
-  $ oex plugins:inspect PLUGIN...
-
-ARGUMENTS
-  PLUGIN  [default: .] Plugin to inspect.
-
-FLAGS
-  -h, --help     Show CLI help.
-  -v, --verbose
-
-DESCRIPTION
-  Displays installation properties of a plugin.
-
-EXAMPLES
-  $ oex plugins:inspect myplugin
-```
-
-## `oex plugins:install PLUGIN...`
-
-Installs a plugin into the CLI.
-
-```
-USAGE
-  $ oex plugins:install PLUGIN...
-
-ARGUMENTS
-  PLUGIN  Plugin to install.
-
-FLAGS
-  -f, --force    Run yarn install with force flag.
-  -h, --help     Show CLI help.
-  -v, --verbose
-
-DESCRIPTION
-  Installs a plugin into the CLI.
-
-  Can be installed from npm or a git url.
-
-  Installation of a user-installed plugin will override a core plugin.
-
-  e.g. If you have a core plugin that has a 'hello' command, installing a user-installed plugin with a 'hello' command
-  will override the core plugin implementation. This is useful if a user needs to update core plugin functionality in
-  the CLI without the need to patch and update the whole CLI.
-
-ALIASES
-  $ oex plugins add
-
-EXAMPLES
-  $ oex plugins:install myplugin 
-
-  $ oex plugins:install https://github.com/someuser/someplugin
-
-  $ oex plugins:install someuser/someplugin
-```
-
-## `oex plugins:link PLUGIN`
-
-Links a plugin into the CLI for development.
-
-```
-USAGE
-  $ oex plugins:link PLUGIN
-
-ARGUMENTS
-  PATH  [default: .] path to plugin
-
-FLAGS
-  -h, --help     Show CLI help.
-  -v, --verbose
-
-DESCRIPTION
-  Links a plugin into the CLI for development.
-
-  Installation of a linked plugin will override a user-installed or core plugin.
-
-  e.g. If you have a user-installed or core plugin that has a 'hello' command, installing a linked plugin with a 'hello'
-  command will override the user-installed or core plugin implementation. This is useful for development work.
-
-EXAMPLES
-  $ oex plugins:link myplugin
-```
-
-## `oex plugins:uninstall PLUGIN...`
-
-Removes a plugin from the CLI.
-
-```
-USAGE
-  $ oex plugins:uninstall PLUGIN...
-
-ARGUMENTS
-  PLUGIN  plugin to uninstall
-
-FLAGS
-  -h, --help     Show CLI help.
-  -v, --verbose
-
-DESCRIPTION
-  Removes a plugin from the CLI.
-
-ALIASES
-  $ oex plugins unlink
-  $ oex plugins remove
-```
-
-## `oex plugins update`
-
-Update installed plugins.
-
-```
-USAGE
-  $ oex plugins update [-h] [-v]
-
-FLAGS
-  -h, --help     Show CLI help.
-  -v, --verbose
-
-DESCRIPTION
-  Update installed plugins.
-```
 <!-- commandsstop -->
