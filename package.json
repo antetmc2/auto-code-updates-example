@@ -26,7 +26,7 @@
     "@oclif/plugin-help": "^5.1.12",
     "@oclif/plugin-plugins": "^2.1.0",
     "edit-json-file": "^1.7.0",
-    "replace-in-file": "^6.3.2",
+    "replace-in-file": "^6.3.5",
     "semver": "^7.3.5",
     "shelljs": "^0.8.5"
   },
